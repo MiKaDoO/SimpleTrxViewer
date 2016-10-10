@@ -1,0 +1,991 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NPOI.SS.FluentExtensions</name>
+    </assembly>
+    <members>
+        <member name="T:NPOI.SS.FluentExtensions.FluentCell">
+            <summary>
+            Bundle together an <c>ICell</c> and a <see cref="T:NPOI.SS.FluentExtensions.FluentStyle"/>
+            so that they the cell can be configured with a fluent interface.
+            </summary>
+            <summary>
+            Bundle together an <c>ICell</c> and a <see cref="T:NPOI.SS.FluentExtensions.FluentStyle"/>
+            so that they the cell can be configured with a fluent interface.
+            </summary>
+            <summary>
+            Bundle together an <c>ICell</c> and a <see cref="T:NPOI.SS.FluentExtensions.FluentStyle"/>
+            so that they the cell can be configured with a fluent interface.
+            </summary>
+            <summary>
+            Bundle together an <c>ICell</c> and a <see cref="T:NPOI.SS.FluentExtensions.FluentStyle"/>
+            so that they the cell can be configured with a fluent interface.
+            </summary>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.Format(System.String)">
+            <summary>
+            Sets the format string.
+            </summary>
+            <param name="format">The format string.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.FormatLongDate">
+            <summary>
+            Sets the format string to long date format, <c>"yyyy-MM-dd HH:mm:ss"</c>.
+            </summary>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.BorderAll(NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            Sets the style of all borders.
+            </summary>
+            <param name="borderStyle">The border style.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.BorderColorAll(System.Int16)">
+            <summary>
+            Sets the color of all borders.
+            </summary>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.SolidFill(System.Int16)">
+            <summary>
+            Sets a cell to fill with a particular color.
+            </summary>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentCell.NumCachedStyles">
+            <summary>
+            Return the number of cached styles. Mainly for checking
+            in the debugger that the caching is working as expected.
+            </summary>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.#ctor(NPOI.SS.UserModel.ICell)">
+            <summary>
+            Initialize a new instance of the <c>FluentCell</c>.
+            </summary>
+            <param name="cell">The NPOI cell this <c>FluentCell</c> is associated with.</param>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentCell.Cell">
+            <summary>
+            The NPOI cell this <c>FluentCell</c> is associated with.
+            </summary>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentCell.Style">
+            <summary>
+            The current FluentStyle. Calling <see cref="M:NPOI.SS.FluentExtensions.FluentCell.ApplyStyle"/> will apply it.
+            </summary>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.ApplyStyle">
+            <summary>
+            Applies the current style to the cell. Reuses a cached style
+            if it exists (this is important because there is a limit to how
+            many styles can be used in an Excel spreadsheet).
+            </summary>
+            <returns>The <c>FluentCell</c>.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.FontWeight(NPOI.SS.UserModel.FontBoldWeight)">
+            <summary>
+            Set the font weight.
+            </summary>
+            <param name="fontWeight">The font weight.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.Charset(System.Int16)">
+            <summary>
+            Set the charset.
+            </summary>
+            <param name="charset">The charset.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.Color(System.Int16)">
+            <summary>
+            Sets the color.
+            </summary>
+            <param name="color">The color.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.FontHeight(System.Double)">
+            <summary>
+            Sets the font height.
+            </summary>
+            <param name="fontHeight">Height of the font.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.FontHeightInPoints(System.Int16)">
+            <summary>
+            Sets the font height in points.
+            </summary>
+            <param name="fontHeightInPoints">The font height in points.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.FontName(System.String)">
+            <summary>
+            Sets the font name.
+            </summary>
+            <param name="fontName">Name of the font.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.Italic(System.Boolean)">
+            <summary>
+            Sets italics on or off.
+            </summary>
+            <param name="italic">if set to <c>true</c> [italic].</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.Strikeout(System.Boolean)">
+            <summary>
+            Sets strikeout on or off.
+            </summary>
+            <param name="strikeout">if set to <c>true</c> [strikeout].</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.SuperScript(NPOI.SS.UserModel.FontSuperScript)">
+            <summary>
+            Sets the superscript type.
+            </summary>
+            <param name="superScript">The super script.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.Underline(NPOI.SS.UserModel.FontUnderlineType)">
+            <summary>
+            Sets the underline type.
+            </summary>
+            <param name="underline">The underline.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.Alignment(NPOI.SS.UserModel.HorizontalAlignment)">
+            <summary>
+            Sets the horizontal alignment.
+            </summary>
+            <param name="alignment">The alignment.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.BorderBottom(NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            Sets the bottom border.
+            </summary>
+            <param name="borderBottom">The bottom border style.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.BorderDiagonal(NPOI.SS.UserModel.BorderDiagonal)">
+            <summary>
+            Sets the diagonal border.
+            </summary>
+            <param name="borderDiagonal">The diagonal border style.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.BorderDiagonalColor(System.Int16)">
+            <summary>
+            Sets the diagonal border color.
+            </summary>
+            <param name="borderDiagonalColor">Color of the diagonal border.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.BorderDiagonalLineStyle(NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            Sets the diagonal border line style.
+            </summary>
+            <param name="borderDiagonalLineStyle">The diagonal border line style.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.BorderLeft(NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            Sets the left border.
+            </summary>
+            <param name="borderLeft">The left border style.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.BorderRight(NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            Sets the right border.
+            </summary>
+            <param name="borderRight">The right border style.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.BorderTop(NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            Sets the top border.
+            </summary>
+            <param name="borderTop">The top border style.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.BottomBorderColor(System.Int16)">
+            <summary>
+            Sets the bottom border color.
+            </summary>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.DataFormat(System.Int16)">
+            <summary>
+            Sets the data format.
+            </summary>
+            <param name="dataFormat">The data format.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.FillBackgroundColor(System.Int16)">
+            <summary>
+            Sets the background fill color.
+            </summary>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.FillForegroundColor(System.Int16)">
+            <summary>
+            Sets the foreground fill color.
+            </summary>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.FillPattern(NPOI.SS.UserModel.FillPattern)">
+            <summary>
+            Sets the fill pattern.
+            </summary>
+            <param name="fillPattern">The fill pattern.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.Indention(System.Int16)">
+            <summary>
+            Sets the indention.
+            </summary>
+            <param name="indention">The indention.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.LeftBorderColor(System.Int16)">
+            <summary>
+            Sets the left border color.
+            </summary>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.RightBorderColor(System.Int16)">
+            <summary>
+            Sets the right border color.
+            </summary>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.Rotation(System.Int16)">
+            <summary>
+            Sets the rotation.
+            </summary>
+            <param name="rotation">The rotation.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.ShrinkToFit(System.Boolean)">
+            <summary>
+            Sets 'shrink-to-fit' on or off.
+            </summary>
+            <param name="shrinkToFit">if set to <c>true</c> then shrink text to fit.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.TopBorderColor(System.Int16)">
+            <summary>
+            Sets the top border color.
+            </summary>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.VerticalAlignment(NPOI.SS.UserModel.VerticalAlignment)">
+            <summary>
+            Sets the vertical alignment.
+            </summary>
+            <param name="verticalAlignment">The vertical alignment.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentCell.WrapText(System.Boolean)">
+            <summary>
+            Sets wrap text on or off.
+            </summary>
+            <param name="wrapText">if set to <c>true</c> [wrap text].</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="T:NPOI.SS.FluentExtensions.FluentStyle">
+            <summary>
+            Provides a data structure which can be used to accumulate
+            styling options via a Fluent API, until they need to be applied
+            to a cell.
+            </summary>
+            <summary>
+            Provides a data structure which can be used to accumulate
+            styling options via a Fluent API, until they need to be applied
+            to a cell.
+            </summary>
+            <summary>
+            Provides a data structure which can be used to accumulate
+            styling options via a Fluent API, until they need to be applied
+            to a cell.
+            </summary>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.Alignment">
+            <summary>
+            Gets or sets the horizontal alignment.
+            </summary>
+            <value>
+            The alignment.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.BorderBottom">
+            <summary>
+            Gets or sets the border bottom style.
+            </summary>
+            <value>
+            The border bottom.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.BorderDiagonal">
+            <summary>
+            Gets or sets the border diagonal.
+            </summary>
+            <value>
+            The border diagonal.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.BorderDiagonalColor">
+            <summary>
+            Gets or sets the diagonal border color.
+            </summary>
+            <value>
+            The color of the border diagonal.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.BorderDiagonalLineStyle">
+            <summary>
+            Gets or sets the diagonal border line style.
+            </summary>
+            <value>
+            The border diagonal line style.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.BorderLeft">
+            <summary>
+            Gets or sets the left border style.
+            </summary>
+            <value>
+            The border left.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.BorderRight">
+            <summary>
+            Gets or sets the right border style.
+            </summary>
+            <value>
+            The border right.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.BorderTop">
+            <summary>
+            Gets or sets the top border style.
+            </summary>
+            <value>
+            The border top.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.BottomBorderColor">
+            <summary>
+            Gets or sets the color of the bottom border.
+            </summary>
+            <value>
+            The color of the bottom border.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.DataFormat">
+            <summary>
+            Gets or sets the data format.
+            </summary>
+            <value>
+            The data format.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.FillBackgroundColor">
+            <summary>
+            Gets or sets the background fill color.
+            </summary>
+            <value>
+            The color of the fill background.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.FillForegroundColor">
+            <summary>
+            Gets or sets the foreground fill color.
+            </summary>
+            <value>
+            The color of the fill foreground.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.FillPattern">
+            <summary>
+            Gets or sets the fill pattern.
+            </summary>
+            <value>
+            The fill pattern.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.Indention">
+            <summary>
+            Gets or sets the indention.
+            </summary>
+            <value>
+            The indention.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.LeftBorderColor">
+            <summary>
+            Gets or sets the color of the left border.
+            </summary>
+            <value>
+            The color of the left border.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.RightBorderColor">
+            <summary>
+            Gets or sets the color of the right border.
+            </summary>
+            <value>
+            The color of the right border.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.Rotation">
+            <summary>
+            Gets or sets the rotation.
+            </summary>
+            <value>
+            The rotation.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.ShrinkToFit">
+            <summary>
+            Gets or sets the shrink to fit setting.
+            </summary>
+            <value>
+            The shrink to fit setting.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.TopBorderColor">
+            <summary>
+            Gets or sets the color of the top border.
+            </summary>
+            <value>
+            The color of the top border.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.VerticalAlignment">
+            <summary>
+            Gets or sets the vertical alignment.
+            </summary>
+            <value>
+            The vertical alignment.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.WrapText">
+            <summary>
+            Gets or sets the wrap text setting.
+            </summary>
+            <value>
+            The wrap text setting.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.Format">
+            <summary>
+            Gets or sets the format, e.g. "0.00%".
+            If used, overrides the <see cref="P:NPOI.SS.FluentExtensions.FluentStyle.DataFormat"/> property when the style is applied.
+            </summary>
+            <value>
+            The format.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.FontWeight">
+            <summary>
+            Gets or sets the font weight.
+            </summary>
+            <value>
+            The font weight.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.Charset">
+            <summary>
+            Gets or sets the charset.
+            </summary>
+            <value>
+            The charset.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.Color">
+            <summary>
+            Gets or sets the color.
+            </summary>
+            <value>
+            The color.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.FontHeight">
+            <summary>
+            Gets or sets the height of the font.
+            </summary>
+            <value>
+            The height of the font.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.FontHeightInPoints">
+            <summary>
+            Gets or sets the font height in points.
+            </summary>
+            <value>
+            The font height in points.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.FontName">
+            <summary>
+            Gets or sets the name of the font.
+            </summary>
+            <value>
+            The name of the font.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.Italic">
+            <summary>
+            Gets or sets the italic setting.
+            </summary>
+            <value>
+            The italic setting.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.Strikeout">
+            <summary>
+            Gets or sets the strikeout setting.
+            </summary>
+            <value>
+            The strikeout setting.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.SuperScript">
+            <summary>
+            Gets or sets the super script setting.
+            </summary>
+            <value>
+            The super script setting.
+            </value>
+        </member>
+        <member name="P:NPOI.SS.FluentExtensions.FluentStyle.Underline">
+            <summary>
+            Gets or sets the underline setting.
+            </summary>
+            <value>
+            The underline setting.
+            </value>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentStyle.ApplyStyle(NPOI.SS.UserModel.IWorkbook,NPOI.SS.UserModel.ICellStyle)">
+            <summary>
+            Applies the style by copying the fluent style to the NPOI style object,.
+            </summary>
+            <param name="workbook">The workbook.</param>
+            <param name="destination">The destination NPOI style object to apply the FluentStyle to.</param>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentStyle.GetHashCode">
+            <summary>
+            Returns the hash code of the object.
+            </summary>
+            <returns>Hash code.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentStyle.Equals(System.Object)">
+            <summary>
+            Returns true if <paramref name="value"/> is equal to this StyleDTO.
+            </summary>
+            <param name="value">The object to check for equality.</param>
+            <returns>True if the object is equal to this one.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentStyle.Equals(NPOI.SS.FluentExtensions.FluentStyle)">
+            <summary>
+            Returns true if <paramref name="value"/> is equal to this StyleDTO.
+            </summary>
+            <param name="value">The object to check for equality.</param>
+            <returns>True if the object is equal to this one.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentStyle.op_Equality(NPOI.SS.FluentExtensions.FluentStyle,NPOI.SS.FluentExtensions.FluentStyle)">
+            <summary>
+            Returns true if the two StyleDTO instances are equal.
+            </summary>
+            <param name="first">First object.</param>
+            <param name="second">Second object.</param>
+            <returns>True if the two objects are equal.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.FluentStyle.op_Inequality(NPOI.SS.FluentExtensions.FluentStyle,NPOI.SS.FluentExtensions.FluentStyle)">
+            <summary>
+            Returns true if the two StyleDTO instances are not equal.
+            </summary>
+            <param name="first">First object.</param>
+            <param name="second">Second object.</param>
+            <returns>True if the two objects are equal.</returns>
+        </member>
+        <member name="T:NPOI.SS.FluentExtensions.ICellExtensions">
+            <summary>
+            Extensions to the NPOI ICell class.
+            </summary>
+            <summary>
+            Extensions to the NPOI ICell class.
+            </summary>
+            <summary>
+            Extensions to the NPOI ICell class.
+            </summary>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.Alignment(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.HorizontalAlignment)">
+            <summary>
+            Sets the horizontal alignment.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="alignment">The alignment.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.BorderBottom(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            Sets the bottom border.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="borderBottom">The bottom border style.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.BorderDiagonal(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.BorderDiagonal)">
+            <summary>
+            Sets the diagonal border.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="borderDiagonal">The diagonal border style.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.BorderDiagonalColor(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the diagonal border color.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.BorderDiagonalLineStyle(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            Sets the diagonal border line style.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="borderDiagonalLineStyle">The diagonal border line style.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.BorderLeft(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            Sets the left border.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="borderLeft">The left border style.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.BorderRight(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            Sets the right border.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="borderRight">The right border style.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.BorderTop(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            Sets the top border.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="borderTop">The top border style.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.BottomBorderColor(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the bottom border color.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.DataFormat(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the data format.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="dataFormat">The data format.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.FillBackgroundColor(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the background fill color.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.FillForegroundColor(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the foreground fill color.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.FillPattern(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.FillPattern)">
+            <summary>
+            Sets the fill pattern.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="fillPattern">The fill pattern.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.Indention(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the indention.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="Indention">The indention.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.LeftBorderColor(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the left border color.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.RightBorderColor(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the right border color.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.Rotation(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the rotation.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="rotation">The rotation.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.ShrinkToFit(NPOI.SS.UserModel.ICell,System.Boolean)">
+            <summary>
+            Sets 'shrink-to-fit' on or off.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="shrinkToFit">if set to <c>true</c> then shrink text to fit.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.TopBorderColor(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the top border color.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.VerticalAlignment(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.VerticalAlignment)">
+            <summary>
+            Sets the vertical alignment.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="verticalAlignment">The vertical alignment.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.WrapText(NPOI.SS.UserModel.ICell,System.Boolean)">
+            <summary>
+            Sets wrap text on or off.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="wrapText">if set to <c>true</c> [wrap text].</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.FontWeight(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.FontBoldWeight)">
+            <summary>
+            Sets the font weight.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="fontWeight">The font weight.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.Charset(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the charset.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="charset">The charset.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.Color(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the font color.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="color">The color.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.FontHeight(NPOI.SS.UserModel.ICell,System.Double)">
+            <summary>
+            Sets the font height.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="fontHeight">Height of the font.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.FontHeightInPoints(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the font height in points.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="fontHeightInPoints">The font height in points.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.FontName(NPOI.SS.UserModel.ICell,System.String)">
+            <summary>
+            Sets the font name.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="fontName">Name of the font.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.Italic(NPOI.SS.UserModel.ICell,System.Boolean)">
+            <summary>
+            Sets italics on or off.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="italic">if set to <c>true</c> [italic].</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.Strikeout(NPOI.SS.UserModel.ICell,System.Boolean)">
+            <summary>
+            Sets strikeout on or off.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="strikeout">if set to <c>true</c> [strikeout].</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.SuperScript(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.FontSuperScript)">
+            <summary>
+            Sets superscript type.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="superScript">The super script.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.Underline(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.FontUnderlineType)">
+            <summary>
+            Sets the underline type.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="underline">The underline type.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.Format(NPOI.SS.UserModel.ICell,System.String)">
+            <summary>
+            Sets the format string.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="format">The format string.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.FormatLongDate(NPOI.SS.UserModel.ICell)">
+            <summary>
+            Sets the format string to long date format, <c>"yyyy-MM-dd HH:mm:ss"</c>.
+            </summary>
+            <param name="cell">The cell.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.BorderAll(NPOI.SS.UserModel.ICell,NPOI.SS.UserModel.BorderStyle)">
+            <summary>
+            Sets the style of all borders.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="borderStyle">The border style.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.BorderColorAll(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets the color of all borders.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.ICellExtensions.SolidFillColor(NPOI.SS.UserModel.ICell,System.Int16)">
+            <summary>
+            Sets a cell to fill with a particular color.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="colorIndex">Index of the color.</param>
+            <returns>A <seealso cref="T:NPOI.SS.FluentExtensions.FluentCell"/>, for further styling.</returns>
+        </member>
+        <member name="T:NPOI.SS.FluentExtensions.IRowExtensions">
+            <summary>
+            Extensions to the NPOI IRow class.
+            </summary>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.IRowExtensions.SetCell(NPOI.SS.UserModel.IRow,System.Int32,System.Boolean)">
+            <summary>
+            Creates a cell and sets it to a boolean value.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="column">The column.</param>
+            <param name="value">The value to set.</param>
+            <returns>The newly created cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.IRowExtensions.SetCell(NPOI.SS.UserModel.IRow,System.Int32,System.DateTime)">
+            <summary>
+            Creates a cell and sets it to a DateTime value.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="column">The column.</param>
+            <param name="value">The value to set.</param>
+            <returns>The newly created cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.IRowExtensions.SetCell(NPOI.SS.UserModel.IRow,System.Int32,System.Double)">
+            <summary>
+            Creates a cell and sets it to a double value.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="column">The column.</param>
+            <param name="value">The value to set.</param>
+            <returns>The newly created cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.IRowExtensions.SetCell(NPOI.SS.UserModel.IRow,System.Int32,NPOI.SS.UserModel.IRichTextString)">
+            <summary>
+            Creates a cell and sets it to a rich text value.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="column">The column.</param>
+            <param name="value">The value to set.</param>
+            <returns>The newly created cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.IRowExtensions.SetCell(NPOI.SS.UserModel.IRow,System.Int32,System.String)">
+            <summary>
+            Creates a cell and sets it to a string value.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="column">The column.</param>
+            <param name="value">The value to set.</param>
+            <returns>The newly created cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.IRowExtensions.SetFormula(NPOI.SS.UserModel.IRow,System.Int32,System.String)">
+            <summary>
+            Creates a cell and sets its formula.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="column">The column.</param>
+            <param name="formula">The formula to set.</param>
+            <returns>The newly created cell.</returns>
+        </member>
+        <member name="M:NPOI.SS.FluentExtensions.IRowExtensions.SetFormula(NPOI.SS.UserModel.IRow,System.Int32,System.String,System.Object[])">
+            <summary>
+            Creates a cell and sets its formula.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="column">The column.</param>
+            <param name="formula">The formula to set.</param>
+            <param name="prms">Optional parameters to substitute into the formula string.</param>
+            <returns>The newly created cell.</returns>
+        </member>
+    </members>
+</doc>
